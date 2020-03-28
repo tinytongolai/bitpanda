@@ -1,0 +1,34 @@
+{  
+   "capabilities":[  
+      {  
+         "browserName":"chrome",
+         "maxInstances":5,
+         "acceptSslCerts": true,
+         "javascriptEnabled": true,
+         "seleniumProtocol":"WebDriver",   
+         "cleanSession": true,
+         "webdriver.chrome.driver":"C:/tools/chromedriver.exe"
+      }
+   ],
+   "proxy":"org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+   "maxSession":5,
+   "port":5555,
+   "register":true,
+   "registerCycle":5000,
+   "hub":"http://localhost:4444",
+   "nodeStatusCheckTimeout":5000,
+   "nodePolling":5000,
+   "role":"node",
+   "unregisterIfStillDownAfter":60000,
+   "downPollingLimit":100,
+   "debug":true,
+   "servlets":[  
+
+   ],
+   "withoutServlets":[  
+
+   ],
+   "custom":{  
+
+   }
+}

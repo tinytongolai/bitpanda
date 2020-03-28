@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} [%-5level] %msg%n%throwable"/>
+        </Console>
+        <Routing name="TestAppender">
+            <Routes pattern="$${ctx:testName}">
+                <Route>
+                    <File
+                            fileName="${ctx:fileName}"
+                            name="${ctx:testName}"
+                            append="false">
+                        <PatternLayout>
+                            <Pattern>%d{HH:mm:ss.SSS} [%-5level]%msg%n%throwable</Pattern>
+                        </PatternLayout>
+                    </File>
+                </Route>
+            </Routes>
+        </Routing>
+    </Appenders>
+    <Loggers>
+        <Logger name="TestLogger" level="TRACE" includeLocation="false">
+            <AppenderRef ref="TestAppender"/>
+        </Logger>
+        <Root level="WARN" includeLocation="false">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
